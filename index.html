@@ -96,8 +96,7 @@ if (profile.active) {
  delete profile.reason; 
  profile.active = false; 
  profile.reason = reason; 
- } else { 
- if (profile.reason !== undefined) { 
+ } else if (profile.reason !== undefined) { 
  return "confirm status manually";; 
  } 
  delete profile.reason; 
