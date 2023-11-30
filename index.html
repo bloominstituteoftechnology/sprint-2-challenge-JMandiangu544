@@ -93,14 +93,7 @@ if (profile.active) {
  if (reason !== undefined) { 
  return "confirm status manually";
  } 
- delete profile.reason; 
- profile.active = false; 
- profile.reason = reason; 
- } else if (profile.reason !== undefined) { 
- return "confirm status manually"; 
  } 
- delete profile.reason; 
- profile.active = true; 
     }
     // 👉 CHALLENGE 2
     function mineSweeper() {
