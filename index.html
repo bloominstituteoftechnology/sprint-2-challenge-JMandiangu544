@@ -97,11 +97,10 @@ if (profile.active) {
  profile.active = false; 
  profile.reason = reason; 
  } else if (profile.reason !== undefined) { 
- return "confirm status manually";; 
+ return "confirm status manually"; 
  } 
  delete profile.reason; 
  profile.active = true; 
- } 
  return profile;
     }
     // 👉 CHALLENGE 2
