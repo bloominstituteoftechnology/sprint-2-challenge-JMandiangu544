@@ -93,12 +93,19 @@ if (profile.active) {
  if (reason !== undefined) { 
  return "confirm status manually";
  } 
-} else { 
-   profile.reason = reason; 
+ delete profile.reason; 
+ profile.active = false; 
+ profile.reason = reason; 
+ } else { 
  if (profile.reason !== undefined) { 
  return "confirm status manually"; 
  } 
-}
+ delete profile.reason; 
+ profile.active = true; 
+ } 
+ return profile; 
+    }
+
   
     
     // 👉 CHALLENGE 2
