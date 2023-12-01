@@ -92,8 +92,12 @@
 if (profile.active) {
  if (reason !== undefined) { 
  return "confirm status manually";
+ } else { 
+   profile.reason = reason; 
+ if (profile.reason !== undefined) { 
+ return "confirm status manually"; 
  } 
- } 
+ return profile; 
     }
     // 👉 CHALLENGE 2
     function mineSweeper() {
