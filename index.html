@@ -102,13 +102,13 @@ if (profile.reason !== undefined)
 return "confirm status manually"
 }
 }else {
- profile.active = false;
- profile.reason = reason;
+ profile.active = false
+ profile.reason = reason
  } else { 
  // Check if 'reason' property is missing 
   if (profile.inactive) {
  if (profile.reason === undefined) { 
- return "confirm status manually"; 
+ return "confirm status manually" 
 } else {
    delete profile.reason;
    profile.active = true;
