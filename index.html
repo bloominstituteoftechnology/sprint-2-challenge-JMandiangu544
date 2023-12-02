@@ -90,26 +90,27 @@
  // Check if profile object is missing the 'active' property 
 
  
-if (profile) {
-if (profile.reason === undefined) 
-{
+if (profile) { 
+  if (profile.reason === undefined) {
 return "impossible to ascertain status"
 }
-}
-if (profile.active) {
-if (profile.reason !== undefined) 
-{
+} 
+      if (profile.active) {
+if (profile.reason !== undefined) {
 return "confirm status manually"
 }
-} if {
+} 
+      if {
  profile.active = false
  profile.reason = reason
- } else { 
+ } 
+      else { 
  // Check if 'reason' property is missing 
   if (profile.inactive) {
  if (profile.reason === undefined) { 
  return "confirm status manually" 
-} if { 
+} 
+    if { 
  delete profile.reason; // Delete 'reason' property 
    profile.active = true; // Activate profile 
  }
