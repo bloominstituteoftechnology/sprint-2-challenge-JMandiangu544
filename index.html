@@ -88,7 +88,12 @@
 
   
  // Check if profile object is missing the 'active' property 
-      
+delete profile.reason;
+ profile.active = false;
+ profile.reason = reason;
+ } else {
+ return "confirm status manually";
+ }
 if (profile) {
 if (profile.reason === undefined) 
 {
