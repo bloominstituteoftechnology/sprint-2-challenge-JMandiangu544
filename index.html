@@ -101,17 +101,17 @@ if (profile.reason !== undefined)
 {
 return "confirm status manually"
 }
-}else {
+} if {
  profile.active = false
  profile.reason = reason
- } /*else { 
+ } else { 
  // Check if 'reason' property is missing 
-  if (profile.active) {
+  if (profile.inactive) {
  if (profile.reason === undefined) { 
  return "confirm status manually" 
 }
 }
-}*/
+}
   
     }
   
