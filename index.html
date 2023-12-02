@@ -109,9 +109,12 @@ return "confirm status manually"
   if (profile.inactive) {
  if (profile.reason === undefined) { 
  return "confirm status manually"; 
+} else {
+   delete profile.reason;
+   profile.active = true;
 }
 }
-}
+  return profile;
     }
   
 
