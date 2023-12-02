@@ -88,9 +88,11 @@
 
   
  // Check if profile object is missing the 'active' property 
-if (profile.active) 
+if (profile.active) {
+if (profile.reason === undefined) 
 {
 return "impossible to ascertain status"
+}
 }
 if (profile.active) {
 if (profile.reason !== undefined) 
