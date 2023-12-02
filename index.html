@@ -96,10 +96,10 @@
  // Check if 'reason' property exists 
  if (profile.reason !== undefined) { 
  return "confirm status manually"; 
+ } 
  } else { 
  profile.active = false; // Deactivate profile 
  profile.reason = reason; // Add 'reason' property 
- } 
  } else { 
  // Check if 'reason' property is missing 
  if (profile.reason === undefined) { 
