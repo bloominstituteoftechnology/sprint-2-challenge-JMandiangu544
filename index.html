@@ -109,16 +109,15 @@ return "confirm status manually"
   if (profile.inactive) {
  if (profile.reason === undefined) { 
  return "confirm status manually" 
-} 
+}
+  }
+      }
     if { 
  delete profile.reason; // Delete 'reason' property 
    profile.active = true; // Activate profile 
  }
     return profile;
 }
-}
-  
-    }
   
 
 
