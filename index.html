@@ -88,11 +88,13 @@
 
  function profileActivation (profile, reason) { 
  // Check if profile object is missing the 'active' property 
- if (!profile.hasOwnProperty('active')) {
+ if (!profile.hasOwnProperty('active')) 
+ {
  return "impossible to ascertain status"
  }
 if (profile.active) {
- if (reason !== undefined) {
+ if (reason !== undefined) 
+ {
  return "confirm status manually";
  }
  }
