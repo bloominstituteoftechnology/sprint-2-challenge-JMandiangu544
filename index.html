@@ -98,20 +98,19 @@
  return "confirm status manually"; 
  } else { 
  profile.active = false; // Deactivate profile 
- 
-   profile.reason = reason; // Add 'reason' property 
+ profile.reason = reason; // Add 'reason' property 
  } 
  } else { 
  // Check if 'reason' property is missing 
  if (profile.reason === undefined) { 
  return "confirm status manually"; 
  } else { 
- delete profile.reason; // Delete 'reason' property profile.active = true; // Activate profile 
+ delete profile.reason; // Delete 'reason' property 
+ profile.active = true; // Activate profile 
  } 
  } 
  return profile; // Return updated profile object 
-} 
-```
+}
 
 
   
