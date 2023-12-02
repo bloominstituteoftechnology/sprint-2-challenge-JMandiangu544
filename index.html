@@ -106,12 +106,13 @@ return "confirm status manually"
  profile.reason = reason;
  } else { 
  // Check if 'reason' property is missing 
-  if (profile.active) {
+  if (profile.inactive) {
  if (profile.reason === undefined) { 
  return "confirm status manually"; 
 }
 }
 }
+    }
   
 
 
