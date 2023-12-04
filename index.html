@@ -163,7 +163,8 @@
  return "shorten all prop names to 9 chars or less"; 
  }
  }
- if (obj[key] === 0) { 
+ if (obj[key] === 0) {
+   const key = {}
  obj[key] = false; 
  } else if (obj[key] === 1) { 
  obj[key] = true; 
