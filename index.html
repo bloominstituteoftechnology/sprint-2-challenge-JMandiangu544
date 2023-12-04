@@ -104,7 +104,7 @@
    if (profile.reason === undefined) { 
  return "confirm status manually"; 
  } 
- delete profile.reason; 
+ profile.reason = reason; 
  profile.active = true;
  } 
  return profile;
