@@ -157,7 +157,23 @@
       // 🧠 Edge cases:
       //    * If a property name exceeds 9 characters, return the string "shorten all prop names to 9 chars or less"
       // 🌟 HINT: careful not to perform any unintended changes on the object
-    }
+
+       function booleanize(obj) { 
+ for (let key in obj) { 
+ if (key.length > 9) { 
+ return "shorten all prop names to 9 chars or less"; 
+ } 
+ if (obj[key] === 0) { 
+ obj[key] = false; 
+ } else if (obj[key] === 1) { 
+ obj[key] = true; 
+ } else if (obj[key] === null) { 
+ delete obj[key]; 
+ } 
+ } 
+ return obj; 
+} 
+    
 
     // 👉 CHALLENGE 4
     function scrub() {
