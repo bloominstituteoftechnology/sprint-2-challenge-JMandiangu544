@@ -164,14 +164,13 @@
  }
  }
  if (obj[key] === 0) {
-   const key = {}
  obj[key] = false; 
  } else if (obj[key] === 1) { 
  obj[key] = true; 
  } else if (obj[key] === null) { 
  delete obj[key]; 
  }  
- return obj; 
+ return obj.key; 
 } 
     
 
