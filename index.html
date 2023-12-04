@@ -90,15 +90,17 @@
  // Check if profile object is missing the 'active' property 
 
  
-if (!profile.hasOwnProperty('active')) { 
+if (profile) { 
+  if (reason !== undefined) {
  return "impossible to ascertain status"; 
  } 
+}
  if (profile.active) { 
  if (reason !== undefined) { 
  return "confirm status manually"; 
  } 
  }
-      }
+    }
  
   
 
