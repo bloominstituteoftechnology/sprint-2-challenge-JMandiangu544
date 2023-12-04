@@ -100,7 +100,8 @@
  profile.active = false; 
  profile.reason = reason; 
  } else { 
- if (profile.reason !== undefined) { 
+ if (profile.inactive) {
+   if (reason === undefined) { 
  return "confirm status manually"; 
  } 
  delete profile.reason; 
