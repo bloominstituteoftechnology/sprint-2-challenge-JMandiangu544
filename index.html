@@ -93,15 +93,15 @@
  return "impossible to ascertain status"; 
  } 
  if (profile.active) { 
- if (reason !== undefined) { 
+ if (profile.reason !== undefined) { 
  return "confirm status manually"; 
  } 
  delete profile.reason; 
  profile.active = false; 
  profile.reason = reason; 
  } else { 
- if (profile.inactive) {
-   if (reason === undefined) { 
+ if (!profile.active) {
+   if (profile.reason === undefined) { 
  return "confirm status manually"; 
  } 
  delete profile.reason; 
@@ -111,7 +111,7 @@
 
       }
     }
-    }
+    
  
  
  
