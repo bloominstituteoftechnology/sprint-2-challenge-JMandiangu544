@@ -217,8 +217,7 @@
       // 🌟 HINT: at each iteration, if the current character is an "X", replace it with the result of popping a digit from the number
       // 🌟 HINT: if you'd rather loop forwards, use `shift` instead of `pop`
 
-
-     function normalizePhoneNumber(number) { 
+ 
  if (number.length !== 10) { 
  return "type a 10-digit number"; 
  } 
@@ -233,9 +232,9 @@ return "invalid phone number";
  if (template[i] === "X") { 
  formattedNumber += number[j]; 
  j++; 
+ }
  } if { 
  formattedNumber += template[i]; 
- } 
  } 
  return formattedNumber; 
 } 
