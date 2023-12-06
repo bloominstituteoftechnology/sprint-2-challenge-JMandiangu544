@@ -188,12 +188,12 @@
  const words = text.split(" "); 
  const scrubbedWords = []; 
  for (let i = 0; i < words.length; i++) { 
- const words2 = words[i]; 
+ const talk = words[i]; 
  }
- if (forbidden.indexOf(word) !== -1) { 
-scrubbedWords.push("x".repeat(word.length)); 
+ if (forbidden.indexOf(talk) !== -1) { 
+scrubbedWords.push("x".repeat(talk.length)); 
  } else { 
- scrubbedWords.push(word); 
+ scrubbedWords.push(talk); 
  }  
  return scrubbedWords.join(" "); 
 }
