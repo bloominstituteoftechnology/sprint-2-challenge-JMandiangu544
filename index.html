@@ -182,23 +182,27 @@
       // 🌟 HINT: useful array methods to use are `push`, `indexOf`, `split`, `join`
 
        
- if (text === "") { 
- return ""; 
- } 
- const words = text.split(" "); 
- const scrubbedWords = [];
-      const i = [];
- for (let i = 0; i < words.length; i++) { 
-  
- }
-      let talk = words[i];
- if (forbidden.indexOf(talk) !== -1) { 
-scrubbedWords.push("x".repeat(talk.length)); 
- } else { 
- scrubbedWords.push(talk); 
- }  
- return scrubbedWords.join(" "); 
+    // Split the text into an array of words
+    const words = text.split(" ");
+ 
+    // Iterate over each word in the array
+    for (let i = 0; i < words.length; i++) {
+        const word = words[i];
+ 
+        // Check if the word is in the forbidden array
+        if (forbidden.includes(word)) {
+            // Replace the word with 'x' characters of equal length
+            words[i] = "x".repeat(word.length);
+        }
+    }
+ 
+    // Join the words back into a string
+    const scrubbedText = words.join(" ");
+ 
+    return scrubbedText;
 }
+ 
+
     // 👉 CHALLENGE 5
     function normalizePhoneNumber() {
       // 🧠 normalizePhoneNumber takes a string as its only argument, representing a ten-digit number
