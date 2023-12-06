@@ -186,9 +186,10 @@
  return ""; 
  } 
  const words = text.split(" "); 
- const scrubbedWords = []; 
+ const scrubbedWords = [];
+      const talk = words[i];
  for (let i = 0; i < words.length; i++) { 
- const talk = words[i]; 
+  
  }
  if (forbidden.indexOf(talk) !== -1) { 
 scrubbedWords.push("x".repeat(talk.length)); 
