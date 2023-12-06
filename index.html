@@ -168,7 +168,7 @@
     
 
     // 👉 CHALLENGE 4
-    function scrub() {
+    function scrub(text, forbidden) {
       // 🧠 scrub takes a string "text" as its first argument, and an array of forbidden words "forbidden" as its second
       // Any word in the text included in the array of forbidden words is replaced with a word of equal length but made of lowcase "x"
       // The scrubbed text is then returned from the function, as seen in the examples below
@@ -180,7 +180,23 @@
       //    scrub("aces high", ["high", "aces", "hearts"]) // returns "xxxx xxxx"
       //    scrub("", ["high", "aces""]) // returns ""
       // 🌟 HINT: useful array methods to use are `push`, `indexOf`, `split`, `join`
-    }
+
+       
+ if (text === "") { 
+ return ""; 
+ } 
+ const words = text.split(" "); 
+ const scrubbedWords = []; 
+ for (let i = 0; i < words.length; i++) { 
+ const word = words[i]; 
+ }
+ if (forbidden.indexOf(word) !== -1) { 
+scrubbedWords.push("x".repeat(word.length)); 
+ } else { 
+ scrubbedWords.push(word); 
+ }  
+ return scrubbedWords.join(" "); 
+}
     // 👉 CHALLENGE 5
     function normalizePhoneNumber() {
       // 🧠 normalizePhoneNumber takes a string as its only argument, representing a ten-digit number
