@@ -218,17 +218,27 @@
       // 🌟 HINT: if you'd rather loop forwards, use `shift` instead of `pop`
 
 
-    // Remove any non-digit characters from the phone number
-    const normalizedNumber = phoneNumber.replace(/\D/g, '');
- 
-    // Format the normalized number in a standardized way
-    const countryCode = normalizedNumber.slice(0, 3);
-    const areaCode = normalizedNumber.slice(3, 6);
-    const subscriberNumber = normalizedNumber.slice(6);
-    const formattedNumber = `+${countryCode} (${areaCode}) ${subscriberNumber}`;
- 
-    return formattedNumber;
-}
+     function normalizePhoneNumber(number) { 
+ if (number.length !== 10) { 
+ return "type a 10-digit number"; 
+ } 
+ for (let i = 0; i < number.length; i++) { 
+ if (!Number.isInteger(Number(number[i]))) { 
+return "invalid phone number"; 
+ } 
+ } 
+ const template = "(XXX) XXX-XXXX"; 
+ let formattedNumber = ""; 
+ for (let i = 0, j = 0; i < template.length; i++) { 
+ if (template[i] === "X") { 
+ formattedNumber += number[j]; 
+ j++; 
+ } if { 
+ formattedNumber += template[i]; 
+ } 
+ } 
+ return formattedNumber; 
+} 
     // 👉 CHALLENGE 6 (bonus, NOT graded)
     function diceRolls() {
       // 🧠 diceRolls takes no arguments and returns a number
