@@ -116,7 +116,7 @@
    
     
    // 👉 CHALLENGE 2
-    function mineSweeper() {
+    function mineSweeper(rows, cols, mines) {
       // 🧠 mineSweeper takes a grid as its first argument, and coordinates x and y as the second and third args
       //  The grid is an array of arrays in the following format: [["🟥","🟦","🟥"],["🟦","🟥","🟥"],["🟥","🟦","🟦"]]
       //  Each subarray is a row of the grid, the first subarray being the top row:
@@ -135,7 +135,52 @@
       //    * If the player lands on blue, return the string "🟦 🥳"
       // 🧠 Edge cases:
       //    * If the x or y coordinates are under 1 or over 3, return the string "invalid coordinates"
-      
+
+      if (mines > rows * cols) {
+        throw new Error("Number of mines cannot exceed the total number of cells in the grid.");
+    }
+ 
+    // Create an empty grid
+    const grid = new Array(rows).fill(null).map(() => new Array(cols).fill(""));
+ 
+    // Place mines randomly in the grid
+    let minesPlaced = 0;
+    while (minesPlaced < mines) {
+        const randomRow = Math.floor(Math.random() * rows);
+        const randomCol = Math.floor(Math.random() * cols);
+ 
+        if (grid[randomRow][randomCol] !== "M") {
+            grid[randomRow][randomCol] = "M";
+            minesPlaced++;
+        }
+    }
+ 
+    // Calculate the number of adjacent mines for each cell
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            if (grid[row][col] !== "M") {
+                let count = 0;
+ 
+                // Check all adjacent cells
+                for (let i = -1; i <= 1; i++) {
+                    for (let j = -1; j <= 1; j++) {
+                        const newRow = row + i;
+                        const newCol = col + j;
+ 
+                        if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols && grid[newRow][newCol] === "M") {
+                            count++;
+                        }
+                    }
+                }
+ 
+                grid[row][col] = count.toString();
+            }
+        }
+    }
+ 
+    return grid;
+}
+
  } 
     
 
