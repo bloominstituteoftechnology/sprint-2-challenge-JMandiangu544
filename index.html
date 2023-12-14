@@ -89,28 +89,31 @@
   
  // Check if profile object is missing the 'active' property 
 
-    if (!profile.hasOwnProperty('active')) { 
- return "impossible to ascertain status"; 
- } 
- if (profile.active) { 
- if (profile.reason !== undefined) { 
- return "confirm status manually"; 
- } 
- delete profile.reason; 
- profile.active = false; 
- profile.reason = reason; 
- } else { 
- if (!profile.active) {
-   if (profile.reason === undefined) { 
- return "confirm status manually"; 
- } 
- delete profile.reason; 
- profile.active = true;
- } 
- return profile;
-
-      }
+ if (profile.active === undefined) {
+        return "impossible to ascertain status";
     }
+ 
+    // Check if the profile is active
+    if (profile.active) {
+        // Check if the profile has a reason property
+        if (profile.reason !== undefined) {
+            return "confirm status manually";
+        }
+ 
+        // Deactivate the profile and add the reason property
+        profile.active = false;
+        profile.reason = reason;
+    } else {
+        // Check if the profile is inactive but missing the reason property
+        if (profile.reason === undefined) {
+            return "confirm status manually";
+        }
+ 
+        // Activate the profile and delete the reason property
+        profile.active = true;
+        delete profile.reason;
+    }
+
    
     
    
