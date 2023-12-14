@@ -112,12 +112,11 @@
       }
     }
    
-   
     
    
     
    // 👉 CHALLENGE 2
-    function mineSweeper(rows, cols, mines) {
+    function mineSweeper() {
       // 🧠 mineSweeper takes a grid as its first argument, and coordinates x and y as the second and third args
       //  The grid is an array of arrays in the following format: [["🟥","🟦","🟥"],["🟦","🟥","🟥"],["🟥","🟦","🟦"]]
       //  Each subarray is a row of the grid, the first subarray being the top row:
@@ -136,8 +135,7 @@
       //    * If the player lands on blue, return the string "🟦 🥳"
       // 🧠 Edge cases:
       //    * If the x or y coordinates are under 1 or over 3, return the string "invalid coordinates"
-
-     
+      
  } 
     
 
@@ -206,7 +204,7 @@
  
 
     // 👉 CHALLENGE 5
-    function normalizePhoneNumber(number) {
+    function normalizePhoneNumber() {
       // 🧠 normalizePhoneNumber takes a string as its only argument, representing a ten-digit number
       // The function returns a string formatted as seen below
       // 🧠 Examples of usage:
@@ -218,28 +216,8 @@
       // 🌟 HINT: instead of looping over the number's digits, loop backwards over a template "(XXX) XXX-XXXX"
       // 🌟 HINT: at each iteration, if the current character is an "X", replace it with the result of popping a digit from the number
       // 🌟 HINT: if you'd rather loop forwards, use `shift` instead of `pop`
+    }
 
- 
- if (number.length !== 10) { 
- return "type a 10-digit number"; 
- } 
- for (let i = 0; i < number.length; i++) { 
- if (!Number.isInteger(Number(number[i]))) { 
-return "invalid phone number"; 
- } 
- } 
- const template = "(XXX) XXX-XXXX"; 
- let formattedNumber = ""; 
- for (let i = 0, j = 0; i < template.length; i++) { 
- if (template[i] === "X") { 
- formattedNumber += number[j]; 
- j++; 
- }
- } if { 
- formattedNumber += template[i]; 
- } 
- return formattedNumber; 
-} 
     // 👉 CHALLENGE 6 (bonus, NOT graded)
     function diceRolls() {
       // 🧠 diceRolls takes no arguments and returns a number
