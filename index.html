@@ -73,7 +73,7 @@
     // ❗ Debug properly using the Console
 
     // 👉 CHALLENGE 1
-    function profileActivation(profile, reason) {
+    function profileActivation() {
       // 🧠 profileActivation takes two arguments, profile and reason, which are an object and a string respectively
       //  The reason arg is only used -and therefore required- to deactivate profiles, not to activate them
       //  The profile arg has an `active` property holding a Boolean value
@@ -85,41 +85,9 @@
       //    * If the profile is active but it has a `reason` prop, return the string "confirm status manually"
       //    * If the profile is **missing** an `active` prop, return the string "impossible to ascertain status"
       // 🌟 HINT: to confirm the existence of a prop, check that its value is not undefined
-
-  
- // Check if profile object is missing the 'active' property 
-
- if (profile.active === undefined) {
-        return "impossible to ascertain status";
-    }
- 
-    // Check if the profile is active
-    if (profile.active) {
-        // Check if the profile has a reason property
-        if (profile.reason !== undefined) {
-            return "confirm status manually";
-        }
- 
-        // Deactivate the profile and add the reason property
-        profile.active = false;
-        profile.reason = reason;
-    } else {
-        // Check if the profile is inactive but missing the reason property
-        if (profile.reason === undefined) {
-            return "confirm status manually";
-        }
-    }
- 
-        // Activate the profile and delete the reason property
-        profile.active = true;
-        delete profile.reason;
     }
 
-   
-    
-   
-    
-   // 👉 CHALLENGE 2
+    // 👉 CHALLENGE 2
     function mineSweeper() {
       // 🧠 mineSweeper takes a grid as its first argument, and coordinates x and y as the second and third args
       //  The grid is an array of arrays in the following format: [["🟥","🟦","🟥"],["🟦","🟥","🟥"],["🟥","🟦","🟦"]]
@@ -139,12 +107,10 @@
       //    * If the player lands on blue, return the string "🟦 🥳"
       // 🧠 Edge cases:
       //    * If the x or y coordinates are under 1 or over 3, return the string "invalid coordinates"
-      
- } 
-    
+    }
 
     // 👉 CHALLENGE 3
-    function booleanize(obj) {
+    function booleanize() {
       // 🧠 booleanize takes an object as its single argument, which can have any number of properties
       // Loop over the properties and then return the object, after applying the following transformations:
       //    * If a value is the number zero, it must be transformed into the Boolean false
@@ -153,26 +119,10 @@
       // 🧠 Edge cases:
       //    * If a property name exceeds 9 characters, return the string "shorten all prop names to 9 chars or less"
       // 🌟 HINT: careful not to perform any unintended changes on the object
- 
- for (let key in obj) { 
- if (!obj.hasOwnProperty(key.length > 9)) { 
- return "shorten all prop names to 9 chars or less"; 
- }
- }
- if (obj[key] === 0) { 
- obj[key] = false; 
- } else if (obj[key] === 1) { 
- obj[key] = true; 
- } else if (obj[key] === null) { 
- delete obj[key]; 
- }  
- return obj; 
-} 
-    
-    
+    }
 
     // 👉 CHALLENGE 4
-    function scrub(text, forbidden) {
+    function scrub() {
       // 🧠 scrub takes a string "text" as its first argument, and an array of forbidden words "forbidden" as its second
       // Any word in the text included in the array of forbidden words is replaced with a word of equal length but made of lowcase "x"
       // The scrubbed text is then returned from the function, as seen in the examples below
@@ -184,27 +134,8 @@
       //    scrub("aces high", ["high", "aces", "hearts"]) // returns "xxxx xxxx"
       //    scrub("", ["high", "aces""]) // returns ""
       // 🌟 HINT: useful array methods to use are `push`, `indexOf`, `split`, `join`
-
-       
-// Split the text into an array of words
-    const words = text.split(" ");
- 
-    // Iterate over each word in the array
-    for (let i = 0; i < words.length; i++) {
-        const word = words[i];
- 
-        // Check if the word is in the forbidden array
-        if (forbidden.includes(word)) {
-            // Replace the word with 'x' characters of equal length
-            words[i] = "x".repeat(word.length);
-        }
     }
- 
-    // Join the words back into a string
-    const scrubbedText = words.join(" ");
- 
-    return scrubbedText;
-}
+
     // 👉 CHALLENGE 5
     function normalizePhoneNumber() {
       // 🧠 normalizePhoneNumber takes a string as its only argument, representing a ten-digit number
