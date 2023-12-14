@@ -92,25 +92,23 @@
 
     if (!profile.hasOwnProperty('active')) { 
  return "impossible to ascertain status"; 
- } 
- if (profile.active) { 
- if (profile.reason !== undefined) { 
- return "confirm status manually"; 
- } 
- delete profile.reason; 
- profile.active = false; 
- profile.reason = reason; 
- } else { 
- if (!profile.active) {
-   if (profile.reason === undefined) { 
- return "confirm status manually"; 
- } 
- delete profile.reason; 
- profile.active = true;
- } 
- return profile;
-
-      }
+    } 
+      if (profile.active) { 
+      if (profile.hasOwnProperty('reason')) { 
+        return "confirm status manually"; 
+      } else { 
+        profile.active = false; 
+        profile.reason = reason; 
+      } 
+    } else { 
+      if (!profile.hasOwnProperty('reason')) { 
+        return "confirm status manually"; 
+      } else { 
+        delete profile.reason; 
+        profile.active = true; 
+      } 
+    } 
+      return profile;  
     }
    
     
