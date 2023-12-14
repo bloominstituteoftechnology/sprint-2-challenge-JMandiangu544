@@ -163,19 +163,20 @@
       //    * If a property name exceeds 9 characters, return the string "shorten all prop names to 9 chars or less"
       // 🌟 HINT: careful not to perform any unintended changes on the object
  
- for (let key in obj) { 
- if (!obj.hasOwnProperty(key.length > 9)) { 
- return "shorten all prop names to 9 chars or less"; 
- }
- }
- if (obj[key] === 0) { 
- obj[key] = false; 
- } else if (obj[key] === 1) { 
- obj[key] = true; 
- } else if (obj[key] === null) { 
- delete obj[key]; 
- }  
- return obj; 
+ for (const key in obj) { 
+   if (key.length > 9) { 
+     return "shorten all prop names to 9 chars or less"; 
+   } 
+   const value = obj[key]; 
+   if (value === 0) { 
+     obj[key] = false; 
+   } else if (value === 1) { 
+     obj[key] = true; 
+   } else if (value === null) {
+     delete obj[key]; 
+   } 
+ } 
+      return obj;   
 } 
     
     
