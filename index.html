@@ -230,6 +230,20 @@
       // 🌟 HINT: instead of looping over the number's digits, loop backwards over a template "(XXX) XXX-XXXX"
       // 🌟 HINT: at each iteration, if the current character is an "X", replace it with the result of popping a digit from the number
       // 🌟 HINT: if you'd rather loop forwards, use `shift` instead of `pop`
+
+      // Check for incorrect length 
+      if (number.length !== 10) { 
+        return "type a 10-digit number"; 
+      } 
+      // Check for invalid characters 
+      if (!/^\d+$/.test(number)) {
+        return "invalid phone number"; 
+      } 
+      // Template for the normalized phone number 
+      const template = "(XXX) XXX-XXXX"; 
+      // Loop backwards over the template and replace 'X' with digits from the number 
+      let normalizedNumber = template .split("") .map(char => (char === "X" ? number.charAt(number.length - 1) : char)) .reverse() .join(""); 
+      return normalizedNumber;
     }
 
     // 👉 CHALLENGE 6 (bonus, NOT graded)
