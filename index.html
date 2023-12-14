@@ -244,7 +244,7 @@
       // Loop backwards over the template and replace 'X' with digits from the number 
       let normalizedNumber = template .split("") .map(char => (char === "X" ? number.charAt(number.length - 1) : char)) .reverse() .join(""); 
       return normalizedNumber;
-    }
+    } 
 
     // 👉 CHALLENGE 6 (bonus, NOT graded)
     function diceRolls() {
